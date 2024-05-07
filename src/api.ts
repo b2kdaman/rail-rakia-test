@@ -6,12 +6,12 @@ import { LoginFormData, User } from './types';
  * @docs https://dummyjson.com/docs/auth
  * @examples https://dummyjson.com/users
  */
-const BASE_URL = 'https://dummyjson.com';
+const BASE_API_URL = 'https://dummyjson.com';
 
 const api = createApi({
   reducerPath: 'api', // Unique key for the API state reducer
   baseQuery: fetchBaseQuery({
-    baseUrl: BASE_URL,
+    baseUrl: BASE_API_URL,
   }),
   endpoints: (builder) => ({
     login: builder.mutation<User, LoginFormData>({

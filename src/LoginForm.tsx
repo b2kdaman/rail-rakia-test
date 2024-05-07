@@ -13,7 +13,7 @@ import { isErrorWithMessage } from './helpers';
 import { LoginFormData } from './types';
 
 export const LoginForm = () => {
-  const [login, result] = useLoginMutation();
+  const [login, data] = useLoginMutation();
   const { register, formState: { errors }, control, handleSubmit } = useForm<LoginFormData>()
 
   const onSubmit: SubmitHandler<LoginFormData> = (data) => {
@@ -70,9 +70,9 @@ export const LoginForm = () => {
               render={passwordRenderFn}
             />
           </div>
-          {isErrorWithMessage(result.error) && <div className="text-red-500 mb-4">{result.error.data.message}</div>}
-          {result.data && <div className="successful-login-message mb-5">Loginned Successfully</div>}
-          <Button type="submit" className="login-button" label="Login" />
+          {isErrorWithMessage(data.error) && <div className="text-red-500 mb-4">{data.error.data.message}</div>}
+          {data.data && <div className="successful-login-message mb-5">Loginned Successfully</div>}
+          <Button type="submit" className="login-button" disabled={Boolean(errors.password) || Boolean(errors.username) || data.isLoading} label="Login" />
         </form>
       </div>
     </div>
