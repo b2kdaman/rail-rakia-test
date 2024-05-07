@@ -71,7 +71,7 @@ export const LoginForm = () => {
             />
           </div>
           {isErrorWithMessage(data.error) && <div className="text-red-500 mb-5">{data.error.data.message}</div>}
-          {data.data && <div className="text-primary-color mb-5">Loginned Successfully</div>}
+          {data.data && <div className="text-primary-color mb-5">Successful Login</div>}
           <Button type="submit" className="bg-primary-color text-primary-50"
                   disabled={Boolean(errors.password) || Boolean(errors.username) || data.isLoading} label="Login"/>
         </form>
