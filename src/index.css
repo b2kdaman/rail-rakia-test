@@ -1,0 +1,27 @@
+@layer tailwind-base, primereact, tailwind-utilities;
+
+/* IMPORTANT: In "styled" mode you must add the PrimeReact Theme here. Do NOT include in "unstyled" mode */
+@import 'primereact/resources/themes/lara-light-teal/theme.css' layer(primereact);
+
+@layer tailwind-utilities {
+  @tailwind components;
+  @tailwind utilities;
+}
+
+:root {
+  --primary-color: #00B894;
+  --secondary-color: #55efc4;
+}
+
+html {
+  font-size: 14px;
+}
+
+body {
+  background-color: var(--primary-50);
+}
+
+.p-inputtext:focus {
+  box-shadow: 0 0 0 0.2rem var(--secondary-color);
+  border-color: var(--primary-color);
+}
