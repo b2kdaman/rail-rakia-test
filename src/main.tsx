@@ -3,11 +3,11 @@ import ReactDOM from "react-dom/client";
 import { Provider } from 'react-redux'
 import { PrimeReactProvider } from "primereact/api";
 
+import './index.css';
+
 import 'primeicons/primeicons.css';
 import 'primereact/resources/primereact.css';
-import 'primereact/resources/themes/lara-light-teal/theme.css';
 import 'primeflex/primeflex.css';
-import './index.css';
 
 import { store } from './store'
 

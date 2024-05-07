@@ -2,7 +2,12 @@
 export default {
   content: ["./index.html", "./node_modules/primereact/**/*.{js,ts,jsx,tsx}", "./src/**/*.{js,ts,jsx,tsx,mdx}"],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'primary-color': '#00B894',
+        'secondary-color': '#55efc4',
+      },
+    },
   },
   plugins: [],
 };

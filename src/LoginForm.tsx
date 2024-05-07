@@ -44,12 +44,12 @@ export const LoginForm = () => {
   return (
     <div className="flex justify-content-center">
       <div className="max-w-30rem w-full">
-        <h5 className="text-center mb-5 text-color">Login Form</h5>
+        <h3 className="text-center mb-5 text-primary-color">Login Form</h3>
         <form className="p-fluid" onSubmit={handleSubmit(onSubmit)}>
           <div className="mb-5">
             <FloatLabel>
               <IconField>
-                <InputIcon className={'pi pi-envelope'} />
+                <InputIcon className={'pi pi-envelope'}/>
                 <InputText
                   id="username"
                   className={classNames({'p-invalid': errors.username})}
@@ -58,7 +58,7 @@ export const LoginForm = () => {
                   })}
                 />
               </IconField>
-              <label htmlFor="username" className={classNames({ 'text-red-500': errors.username })}>Username*</label>
+              <label htmlFor="username" className={classNames({'text-red-500': errors.username})}>Username*</label>
             </FloatLabel>
             {errors.username && <div className="text-red-500 pt-2">{errors.username?.message}</div>}
           </div>
@@ -66,13 +66,14 @@ export const LoginForm = () => {
             <Controller
               control={control}
               name="password"
-              rules={{ required: "Password is required" }}
+              rules={{required: "Password is required"}}
               render={passwordRenderFn}
             />
           </div>
-          {isErrorWithMessage(data.error) && <div className="text-red-500 mb-4">{data.error.data.message}</div>}
-          {data.data && <div className="successful-login-message mb-5">Loginned Successfully</div>}
-          <Button type="submit" className="login-button" disabled={Boolean(errors.password) || Boolean(errors.username) || data.isLoading} label="Login" />
+          {isErrorWithMessage(data.error) && <div className="text-red-500 mb-5">{data.error.data.message}</div>}
+          {data.data && <div className="text-primary-color mb-5">Loginned Successfully</div>}
+          <Button type="submit" className="bg-primary-color text-primary-50"
+                  disabled={Boolean(errors.password) || Boolean(errors.username) || data.isLoading} label="Login"/>
         </form>
       </div>
     </div>
